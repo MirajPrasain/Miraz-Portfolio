@@ -1,6 +1,28 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# === SECURITY & SECRETS (NEVER COMMIT THESE) ===
+# Environment variables and secrets
+.env*
+.env.local
+.env.production
+.env.staging
+.env.development
+secrets.json
+credentials.json
+config.json
+*.pem
+*.key
+*.p12
+id_rsa
+id_rsa.pub
+*.crt
+*.cer
 
-# dependencies
+# API keys and tokens (common patterns)
+**/api-keys.*
+**/tokens.*
+**/secrets.*
+
+# === NEXT.JS / REACT PRODUCTION ===
+# Dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -10,32 +32,63 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# Next.js build outputs
 /.next/
 /out/
-
-# production
 /build
 
-# misc
-.DS_Store
-*.pem
+# Next.js cache and artifacts
+.next/cache/
+*.tsbuildinfo
+next-env.d.ts
 
-# debug
+# Vercel deployment
+.vercel
+
+# === DEVELOPMENT TOOLS ===
+# Testing
+/coverage
+.nyc_output
+.jest/
+
+# IDE and editor files
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Linting and formatting cache
+.eslintcache
+.prettiercache
+
+# === LOGS & DEBUGGING ===
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# === OPERATING SYSTEM ===
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 
-# vercel
-.vercel
+# Windows  
+desktop.ini
+Thumbs.db
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# === TEMPORARY & CACHE ===
+tmp/
+temp/
+.cache/
+.parcel-cache/
+
+# === PACKAGE MANAGER ARTIFACTS ===
+package-lock.json.backup
+npm-shrinkwrap.json
