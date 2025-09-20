@@ -26,13 +26,13 @@ export function LiquidGlassButton({
           "backdrop-blur-2xl transition-all duration-300",
           // Dark mode (default)
           currentVariant === "dark" && [
-            "bg-white/8 border border-white/30",
-            "shadow-lg hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]"
+            "bg-white/30 border border-white/80",
+            "shadow-lg hover:shadow-[0_0_48px_rgba(255,255,255,0.6)]"
           ],
           // Light mode
           currentVariant === "light" && [
-            "bg-black/8 border border-black/30",
-            "shadow-lg hover:shadow-[0_0_40px_rgba(0,0,0,0.4)]"
+            "bg-black/30 border border-black/80",
+            "shadow-lg hover:shadow-[0_0_48px_rgba(0,0,0,0.6)]"
           ],
           className
         )}

@@ -3,41 +3,8 @@
 import { useState } from "react";
 
 export default function Projects() {
-  return (
-    <section
-      id="bitebit"
-      className="relative min-h-screen py-20 px-6 bg-black text-white"
-    >
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
-        BiteBit
-      </h2>
-
-      <div className="max-w-3xl mx-auto space-y-6">
-        <ExpandableCard title="Story">
-          <p>
-            BiteBit was born from the struggle of tracking calories accurately.
-            I wanted something more reliable than estimates — so I used AI
-            vision models to turn photos into nutritional breakdowns.
-          </p>
-        </ExpandableCard>
-
-        <ExpandableCard title="Technical Challenges">
-          <p>
-            Built using FastAPI, YOLOv8, and MiDaS depth estimation for precise
-            volume detection. Biggest hurdle was keeping inference fast while
-            integrating with a React frontend.
-          </p>
-        </ExpandableCard>
-
-        <ExpandableCard title="Impact">
-          <p>
-            Early demo hit 5,000+ users in one month. BiteBit proved that calorie
-            tracking can be reimagined with computer vision and AI.
-          </p>
-        </ExpandableCard>
-      </div>
-    </section>
-  );
+  // BiteBit section removed per user request
+  return null;
 }
 
 function ExpandableCard({
