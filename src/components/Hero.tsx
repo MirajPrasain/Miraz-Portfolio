@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import { loadSlim } from "@tsparticles/slim";
 import { motion } from "framer-motion";
 
+
 export default function Hero() {
   const [ready, setReady] = useState(false);
   // clarity: 0 = foggy/chaotic, 1 = clear/attract
@@ -82,24 +83,79 @@ export default function Hero() {
           className="absolute inset-0"
         />
       )}
-      
-      
-  <motion.div
-    className="relative z-10 px-6 text-center"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-  >
-    <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-      Miraj Prasain
-    </h1>
-    <p className="mt-5 text-lg md:text-2xl">
-      Creation is about connecting the dots 
-    </p>
 
-  </motion.div>
+      
+      <motion.div
+  className="relative z-10 px-8 text-center w-full"
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1.2, ease: "easeOut" }}
+>
+  {/* Headline */}
+  <motion.h1 
+    className="text-[6rem] font-black text-white leading-[1]"
+    initial={{ opacity: 0, y: 60 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+  >
+    Miraj Prasain
+  </motion.h1>
+
+  {/* Spacer */}
+  <div className="h-32"></div>
+
+  {/* Subtitle */}
+  <motion.p 
+    className="text-[1.75rem] font-light text-white/80 leading-snug max-w-4xl mx-auto"
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
+  >
+    Creation is about <span className="font-semibold text-purple-300">connecting the dots</span>
+  </motion.p>
+
+  {/* Spacer */}
+  <div className="h-24"></div>
+
+  {/* Buttons */}
+   <motion.div 
+     className="flex flex-row gap-16 justify-center items-center gap-8"
+     initial={{ opacity: 0, y: 50 }}
+     animate={{ opacity: 1, y: 0 }}
+     transition={{ duration: 1.0, delay: 0.8, ease: "easeOut" }}
+   >
+      {/* Projects Button */}
+      <button 
+        className="min-w-[140px] h-[56px] px-8 py-4
+                   rounded-full border-2 border-white/70
+                   bg-white/10 backdrop-blur-md
+                   text-white font-semibold text-xl
+                   transition-all duration-300 ease-out
+                   hover:bg-white hover:text-black hover:border-white
+                   hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]
+                   active:scale-95"
+      >
+        Projects
+      </button>
+
+      {/* Links Button */}
+      <button 
+        className="min-w-[140px] h-[56px] px-8 py-4
+                   rounded-full border-2 border-white/70
+                   bg-white/10 backdrop-blur-md
+                   text-white font-semibold text-xl
+                   transition-all duration-300 ease-out
+                   hover:bg-white hover:text-black hover:border-white
+                   hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]
+                   active:scale-95"
+      >
+        Links
+      </button>
+   </motion.div>
+
+</motion.div>
+
 </section>
 
   );
 }
-// ...existing code...
