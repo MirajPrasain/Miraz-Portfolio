@@ -85,6 +85,22 @@ export default function Hero() {
       )}
 
       
+      {/* Background glow effect */}
+      <div className="absolute inset-0 z-5 flex items-center justify-center">
+        <div className="w-[800px] h-[600px] rounded-full opacity-30"
+             style={{
+               background: 'radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 40%, transparent 70%)',
+               filter: 'blur(60px)'
+             }}
+        />
+        <div className="absolute w-[600px] h-[400px] rounded-full opacity-20"
+             style={{
+               background: 'radial-gradient(circle, rgba(196,181,253,0.12) 0%, rgba(196,181,253,0.06) 50%, transparent 80%)',
+               filter: 'blur(40px)'
+             }}
+        />
+      </div>
+
       <motion.div
   className="relative z-10 px-8 text-center w-full"
   initial={{ opacity: 0, y: 30 }}
@@ -94,6 +110,17 @@ export default function Hero() {
   {/* Headline */}
   <motion.h1 
     className="text-[6rem] font-black text-white leading-[1]"
+    style={{
+      textShadow: `
+        0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 40px rgba(255, 255, 255, 0.3),
+        0 0 60px rgba(255, 255, 255, 0.2),
+        0 0 80px rgba(255, 255, 255, 0.1),
+        0 1px 0 rgba(255, 255, 255, 0.8),
+        0 2px 0 rgba(255, 255, 255, 0.6)
+      `,
+      WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.3)'
+    }}
     initial={{ opacity: 0, y: 60 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
@@ -106,12 +133,37 @@ export default function Hero() {
 
   {/* Subtitle */}
   <motion.p 
-    className="text-[1.75rem] font-light text-white/80 leading-snug max-w-4xl mx-auto"
+    className="text-[1.75rem] font-light text-white/90 leading-snug max-w-4xl mx-auto"
+    style={{
+      textShadow: `
+        0 0 15px rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.2),
+        0 0 45px rgba(255, 255, 255, 0.1),
+        0 1px 0 rgba(255, 255, 255, 0.6)
+      `,
+      WebkitTextStroke: '0.3px rgba(255, 255, 255, 0.2)'
+    }}
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
   >
-    Creation is about <span className="font-semibold text-purple-300">connecting the dots</span>
+      {["Creation is about connecting the dots"].join("").split(" ").map((word, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ 
+            duration: 0.4, 
+            ease: "easeOut", 
+            delay: 0.7 + index * 0.05 // words stagger in from left
+          }}
+          style={{ display: "inline-block", marginRight: "0.5rem" }}
+        >
+          {word}
+        </motion.span>
+      ))}
+   
+
   </motion.p>
 
   {/* Spacer */}
@@ -126,6 +178,9 @@ export default function Hero() {
    >
       {/* Projects Button */}
       <button 
+        onClick={() => {
+          document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+        }}
         className="min-w-[140px] h-[56px] px-8 py-4
                    rounded-full border-2 border-white/70
                    bg-white/10 backdrop-blur-md
