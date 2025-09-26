@@ -64,7 +64,8 @@ export default function Projects() {
                 0 0 60px rgba(255, 255, 255, 0.1),
                 0 1px 0 rgba(255, 255, 255, 0.5)
               `,
-              WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)'
+              WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
+              textStroke: '0.5px rgba(255, 255, 255, 0.1)'
             }}
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -155,7 +156,8 @@ export default function Projects() {
                               0 0 60px rgba(255, 255, 255, 0.2),
                               0 1px 0 rgba(255, 255, 255, 0.6)
                             `,
-                            WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.2)'
+                            WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.2)',
+                            textStroke: '0.5px rgba(255, 255, 255, 0.2)'
                           }}
                           initial={{ opacity: 0, x: -30, scale: 0.95 }}
                           whileInView={{ opacity: 1, x: 0, scale: 1 }}

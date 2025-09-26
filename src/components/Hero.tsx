@@ -119,7 +119,8 @@ export default function Hero() {
         0 1px 0 rgba(255, 255, 255, 0.8),
         0 2px 0 rgba(255, 255, 255, 0.6)
       `,
-      WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.3)'
+      WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.3)',
+      textStroke: '0.5px rgba(255, 255, 255, 0.3)'
     }}
     initial={{ opacity: 0, y: 60 }}
     animate={{ opacity: 1, y: 0 }}
@@ -141,7 +142,8 @@ export default function Hero() {
         0 0 45px rgba(255, 255, 255, 0.1),
         0 1px 0 rgba(255, 255, 255, 0.6)
       `,
-      WebkitTextStroke: '0.3px rgba(255, 255, 255, 0.2)'
+      WebkitTextStroke: '0.3px rgba(255, 255, 255, 0.2)',
+      textStroke: '0.3px rgba(255, 255, 255, 0.2)'
     }}
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
@@ -178,9 +180,6 @@ export default function Hero() {
    >
       {/* Projects Button */}
       <button 
-        onClick={() => {
-          document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-        }}
         className="min-w-[140px] h-[56px] px-8 py-4
                    rounded-full border-2 border-white/70
                    bg-white/10 backdrop-blur-md
