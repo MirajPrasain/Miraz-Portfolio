@@ -4,6 +4,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useState, useRef } from "react";
 import { loadSlim } from "@tsparticles/slim";
 import { motion } from "framer-motion";
+import { Button, Text, Heading } from "@radix-ui/themes";
 
 
 export default function Hero() {
@@ -108,47 +109,60 @@ export default function Hero() {
   transition={{ duration: 1.2, ease: "easeOut" }}
 >
   {/* Headline */}
-  <motion.h1 
-    className="text-[6rem] font-black text-white leading-[1]"
-    style={{
-      textShadow: `
-        0 0 20px rgba(255, 255, 255, 0.4),
-        0 0 40px rgba(255, 255, 255, 0.3),
-        0 0 60px rgba(255, 255, 255, 0.2),
-        0 0 80px rgba(255, 255, 255, 0.1),
-        0 1px 0 rgba(255, 255, 255, 0.8),
-        0 2px 0 rgba(255, 255, 255, 0.6)
-      `,
-      WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.3)',
-      textStroke: '0.5px rgba(255, 255, 255, 0.3)'
-    }}
+  <motion.div
     initial={{ opacity: 0, y: 60 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
   >
-    Miraj Prasain
-  </motion.h1>
+    <Heading 
+      size="9" 
+      weight="bold"
+      style={{
+        fontSize: '6rem',
+        lineHeight: '1',
+        color: 'white',
+        textShadow: `
+          0 0 20px rgba(255, 255, 255, 0.4),
+          0 0 40px rgba(255, 255, 255, 0.3),
+          0 0 60px rgba(255, 255, 255, 0.2),
+          0 0 80px rgba(255, 255, 255, 0.1),
+          0 1px 0 rgba(255, 255, 255, 0.8),
+          0 2px 0 rgba(255, 255, 255, 0.6)
+        `,
+        WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.3)'
+      }}
+    >
+      Miraj Prasain
+    </Heading>
+  </motion.div>
 
   {/* Spacer */}
   <div className="h-32"></div>
 
   {/* Subtitle */}
-  <motion.p 
-    className="text-[1.75rem] font-light text-white/90 leading-snug max-w-4xl mx-auto"
-    style={{
-      textShadow: `
-        0 0 15px rgba(255, 255, 255, 0.3),
-        0 0 30px rgba(255, 255, 255, 0.2),
-        0 0 45px rgba(255, 255, 255, 0.1),
-        0 1px 0 rgba(255, 255, 255, 0.6)
-      `,
-      WebkitTextStroke: '0.3px rgba(255, 255, 255, 0.2)',
-      textStroke: '0.3px rgba(255, 255, 255, 0.2)'
-    }}
+  <motion.div
     initial={{ opacity: 0, y: 40 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
   >
+    <Text 
+      size="7" 
+      weight="light"
+      style={{
+        fontSize: '1.75rem',
+        lineHeight: '1.375',
+        color: 'rgba(255, 255, 255, 0.9)',
+        maxWidth: '64rem',
+        margin: '0 auto',
+        textShadow: `
+          0 0 15px rgba(255, 255, 255, 0.3),
+          0 0 30px rgba(255, 255, 255, 0.2),
+          0 0 45px rgba(255, 255, 255, 0.1),
+          0 1px 0 rgba(255, 255, 255, 0.6)
+        `,
+        WebkitTextStroke: '0.3px rgba(255, 255, 255, 0.2)'
+      }}
+    >
       {["Creation is about connecting the dots"].join("").split(" ").map((word, index) => (
         <motion.span
           key={index}
@@ -164,47 +178,103 @@ export default function Hero() {
           {word}
         </motion.span>
       ))}
-   
-
-  </motion.p>
+    </Text>
+  </motion.div>
 
   {/* Spacer */}
   <div className="h-24"></div>
 
   {/* Buttons */}
    <motion.div 
-     className="flex flex-row gap-16 justify-center items-center gap-8"
+     className="flex flex-row justify-center items-center"
      initial={{ opacity: 0, y: 50 }}
      animate={{ opacity: 1, y: 0 }}
      transition={{ duration: 1.0, delay: 0.8, ease: "easeOut" }}
    >
       {/* Projects Button */}
-      <button 
-        className="min-w-[140px] h-[56px] px-8 py-4
-                   rounded-full border-2 border-white/70
-                   bg-white/10 backdrop-blur-md
-                   text-white font-semibold text-xl
-                   transition-all duration-300 ease-out
-                   hover:bg-white hover:text-black hover:border-white
-                   hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]
-                   active:scale-95"
+      <Button
+        size="4"
+        variant="soft"
+        style={{
+          minWidth: '140px',
+          height: '56px',
+          padding: '0 32px',
+          marginRight: '48px',
+          borderRadius: '9999px',
+          border: '2px solid rgba(255, 255, 255, 0.7)',
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(12px)',
+          color: 'white',
+          fontWeight: '600',
+          fontSize: '1.25rem',
+          transition: 'all 300ms ease-out',
+          cursor: 'pointer'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = 'white';
+          e.currentTarget.style.color = 'black';
+          e.currentTarget.style.borderColor = 'white';
+          e.currentTarget.style.transform = 'scale(1.05)';
+          e.currentTarget.style.boxShadow = '0 0 30px rgba(255,255,255,0.4)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+          e.currentTarget.style.color = 'white';
+          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.7)';
+          e.currentTarget.style.transform = 'scale(1)';
+          e.currentTarget.style.boxShadow = 'none';
+        }}
+        onMouseDown={(e) => {
+          e.currentTarget.style.transform = 'scale(0.95)';
+        }}
+        onMouseUp={(e) => {
+          e.currentTarget.style.transform = 'scale(1.05)';
+        }}
       >
         Projects
-      </button>
+      </Button>
 
       {/* Links Button */}
-      <button 
-        className="min-w-[140px] h-[56px] px-8 py-4
-                   rounded-full border-2 border-white/70
-                   bg-white/10 backdrop-blur-md
-                   text-white font-semibold text-xl
-                   transition-all duration-300 ease-out
-                   hover:bg-white hover:text-black hover:border-white
-                   hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]
-                   active:scale-95"
+      <Button
+        size="4"
+        variant="soft"
+        style={{
+          minWidth: '140px',
+          height: '56px',
+          padding: '0 32px',
+          borderRadius: '9999px',
+          border: '2px solid rgba(255, 255, 255, 0.7)',
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(12px)',
+          color: 'white',
+          fontWeight: '600',
+          fontSize: '1.25rem',
+          transition: 'all 300ms ease-out',
+          cursor: 'pointer'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = 'white';
+          e.currentTarget.style.color = 'black';
+          e.currentTarget.style.borderColor = 'white';
+          e.currentTarget.style.transform = 'scale(1.05)';
+          e.currentTarget.style.boxShadow = '0 0 30px rgba(255,255,255,0.4)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+          e.currentTarget.style.color = 'white';
+          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.7)';
+          e.currentTarget.style.transform = 'scale(1)';
+          e.currentTarget.style.boxShadow = 'none';
+        }}
+        onMouseDown={(e) => {
+          e.currentTarget.style.transform = 'scale(0.95)';
+        }}
+        onMouseUp={(e) => {
+          e.currentTarget.style.transform = 'scale(1.05)';
+        }}
       >
         Links
-      </button>
+      </Button>
    </motion.div>
 
 </motion.div>

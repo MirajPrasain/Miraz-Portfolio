@@ -79,7 +79,7 @@ export default function ProjectsPage() {
               <p>
                 BiteBit has gained significant early traction with over <strong>2,000+ early users</strong> 
                 actively testing the platform. Our growth strategy includes targeted influencer marketing 
-                campaigns and viral content on <strong>TikTok and Instagram</strong>, showcasing the app's 
+                campaigns and viral content on <strong>TikTok and Instagram</strong>, showcasing the app&apos;s 
                 ease of use and accuracy. The positive user feedback and organic growth demonstrate the 
                 strong market demand for AI-powered nutrition tracking solutions.
               </p>
